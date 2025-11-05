@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Wellness Advisor</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2em;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+        }
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 2em;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Wellness Advisor</h1>
+    <form id="wellness-form">
+        <div>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <div>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+                <option value="2">Non-binary/Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="relationship_status">Relationship Status</label>
+            <select id="relationship_status" name="relationship_status" required>
+                <option value="0">Single</option>
+                <option value="1">In a relationship</option>
+                <option value="2">Married/Partnered</option>
+                <option value="3">Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="sleep_quality">Sleep Quality (1-10)</label>
+            <input type="number" id="sleep_quality" name="sleep_quality" min="1" max="10" required>
+        </div>
+        <div>
+            <label for="water_intake_litres">Water Intake (Litres)</label>
+            <input type="number" id="water_intake_litres" name="water_intake_litres" step="0.1" required>
+        </div>
+        <div>
+            <label for="food_quality">Food Quality (1-10)</label>
+            <input type="number" id="food_quality" name="food_quality" min="1" max="10" required>
+        </div>
+        <div>
+            <label for="meals_count">Meals Count</label>
+            <input type="number" id="meals_count" name="meals_count" required>
+        </div>
+        <div>
+            <label for="caffeine_intake_cups">Caffeine Intake (Cups)</label>
+            <input type="number" id="caffeine_intake_cups" name="caffeine_intake_cups" required>
+        </div>
+        <div>
+            <label for="alcohol_consumption_drinks_week">Alcohol Consumption (Drinks/Week)</label>
+            <input type="number" id="alcohol_consumption_drinks_week" name="alcohol_consumption_drinks_week" required>
+        </div>
+        <div>
+            <label for="smoking_status">Smoking Status</label>
+            <select id="smoking_status" name="smoking_status" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        <div>
+            <label for="chronic_health_issues">Chronic Health Issues</label>
+            <select id="chronic_health_issues" name="chronic_health_issues" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        <div>
+            <label for="medication_use">Medication Use</label>
+            <select id="medication_use" name="medication_use" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        <div>
+            <label for="physical_activity_minutes_day">Physical Activity (Minutes/Day)</label>
+            <input type="number" id="physical_activity_minutes_day" name="physical_activity_minutes_day" required>
+        </div>
+        <div>
+            <label for="sedentary_time_hours_day">Sedentary Time (Hours/Day)</label>
+            <input type="number" id="sedentary_time_hours_day" name="sedentary_time_hours_day" step="0.1" required>
+        </div>
+        <div>
+            <label for="environment_noise">Environment Noise (1-10)</label>
+            <input type="number" id="environment_noise" name="environment_noise" min="1" max="10" required>
+        </div>
+        <div>
+            <label for="lighting_quality">Lighting Quality (1-10)</label>
+            <input type="number" id="lighting_quality" name="lighting_quality" min="1" max="10" required>
+        </div>
+        <div>
+            <label for="study_space_quality">Study Space Quality (1-10)</label>
+            <input type="number" id="study_space_quality" name="study_space_quality" min="1" max="10" required>
+        </div>
+        <div>
+            <label for="roommate_situation">Roommate Situation</label>
+            <select id="roommate_situation" name="roommate_situation" required>
+                <option value="0">Alone</option>
+                <option value="1">Shared room</option>
+                <option value="2">Shared apartment</option>
+            </select>
+        </div>
+        <div>
+            <label for="living_arrangement">Living Arrangement</label>
+            <select id="living_arrangement" name="living_arrangement" required>
+                <option value="0">Off-campus shared</option>
+                <option value="1">On-campus dorm</option>
+                <option value="2">Living with family</option>
+            </select>
+        </div>
+        <div>
+            <label for="commute_time_minutes_day">Commute Time (Minutes/Day)</label>
+            <input type="number" id="commute_time_minutes_day" name="commute_time_minutes_day" required>
+        </div>
+        <div>
+            <label for="study_hours_last_24h">Study Hours (Last 24h)</label>
+            <input type="number" id="study_hours_last_24h" name="study_hours_last_24h" step="0.1" required>
+        </div>
+        <div>
+            <label for="study_stress">Study Stress (1-10)</label>
+            <input type="number" id="study_stress" name="study_stress" min="1" max="10" required>
+        </div>
+        <div>
+            <label for="upcoming_exam_assignment_stress">Upcoming Exam/Assignment Stress (1-10)</label>
+            <input type="number" id="upcoming_exam_assignment_stress" name="upcoming_exam_assignment_stress" min="1" max="10" required>
+        </div>
+        <div>
+            <label for="grades_estimate_gpa">Grades Estimate (GPA)</label>
+            <input type="number" id="grades_estimate_gpa" name="grades_estimate_gpa" step="0.1" required>
+        </div>
+        <div>
+            <label for="financial_stress">Financial Stress (1-10)</label>
+            <input type="number" id="financial_stress" name="financial_stress" min="1" max="10" required>
+        </div>
+        <div>
+            <label for="mood_last_24h">Mood (Last 24h, 1-10)</label>
+            <input type="number" id="mood_last_24h" name="mood_last_24h" min="1" max="10" required>
+        </div>
+        <div>
+            <label for="screen_time_hours_day">Screen Time (Hours/Day)</label>
+            <input type="number" id="screen_time_hours_day" name="screen_time_hours_day" step="0.1" required>
+        </div>
+        <div>
+            <label for="social_media_time_hours_day">Social Media Time (Hours/Day)</label>
+            <input type="number" id="social_media_time_hours_day" name="social_media_time_hours_day" step="0.1" required>
+        </div>
+        <div>
+            <label for="social_interaction_time_minutes_day">Social Interaction Time (Minutes/Day)</label>
+            <input type="number" id="social_interaction_time_minutes_day" name="social_interaction_time_minutes_day" required>
+        </div>
+        <div class="full-width">
+            <button type="submit">Predict</button>
+        </div>
+    </form>
+
+    <div id="result">
+        <div id="scores"></div>
+        <div id="summary"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('wellness-form');
+        const scoresDiv = document.getElementById('scores');
+        const summaryDiv = document.getElementById('summary');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = {};
+            for (const [key, value] of formData.entries()) {
+                data[key] = parseFloat(value);
+            }
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    scoresDiv.innerHTML = `
+                        <h3>Prediction Results:</h3>
+                        <p>Anxiety Score: ${result.anxiety_score.toFixed(2)}</p>
+                        <p>Depression Score: ${result.depression_score.toFixed(2)}</p>
+                        <p>Life Satisfaction: ${result.life_satisfaction.toFixed(2)}</p>
+                    `;
+                    summaryDiv.innerHTML = `
+                        <h3>Summary and Recommendations:</h3>
+                        <p>${result.summary}</p>
+                    `;
+                } else {
+                    scoresDiv.innerHTML = `<p>Error: ${response.statusText}</p>`;
+                    summaryDiv.innerHTML = '';
+                }
+            } catch (error) {
+                scoresDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+                summaryDiv.innerHTML = '';
+            }
+        });
+    </script>
+</body>
+</html>
