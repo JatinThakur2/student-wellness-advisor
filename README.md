@@ -1,7 +1,3 @@
-# student-wellness-advisor
-
-=======
-
 # Student Wellness Advisor
 
 This project is a web application that provides personalized wellness advice to students based on a machine learning model. It aims to help students understand their mental well-being and provides actionable steps to improve it.
