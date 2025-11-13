@@ -1,0 +1,7 @@
+# Ignore Python virtual environment folders
+.venv/
+venv/
+
+# Ignore generated report files
+backend/generate_report.py
+Student_Wellness_Advisor_Report.docx
